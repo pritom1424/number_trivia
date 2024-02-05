@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:number_trivia/features/number_trivia/presentation/pages/number_trivia_page.dart';
+import 'injection_container.dart' as di;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -13,27 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryColor: Colors.green.shade800,
       ),
-      home: MyHomePage(),
-      debugShowCheckedModeBanner: false,
+      home: const NumberTriviaPage(),
+      //debugShowCheckedModeBanner: false,
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container();
   }
 }

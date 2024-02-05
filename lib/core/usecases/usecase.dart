@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:number_trivia/core/errors/failures.dart';
+import '../errors/failures.dart';
 
 abstract class Usecase<Type, Params> {
   Future<Either<Failures, Type>> call(Params params);
